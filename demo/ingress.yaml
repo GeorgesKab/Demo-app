@@ -11,7 +11,7 @@ spec:
     http:
       paths:
       - path: /demo(/|$)(.*)
-        pathType: Prefix
+        pathType: ImplementationSpecific
         backend:
           service:
             name: my-app-cluster
@@ -31,7 +31,7 @@ spec:
     http:
       paths:
       - path: /demo2(/|$)(.*)
-        pathType: Prefix
+        pathType: ImplementationSpecific
         backend:
           service:
             name: my-app-cluster-2
