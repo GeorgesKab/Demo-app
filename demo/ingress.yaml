@@ -1,0 +1,40 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-a
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /path-a/$2
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: localhost
+    http:
+      paths:
+      - path: /demo(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: my-app-cluster
+            port:
+              number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-b
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /path-b/$2
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: localhost
+    http:
+      paths:
+      - path: /demo2(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: my-app-cluster-2
+            port:
+              number: 80
+---
