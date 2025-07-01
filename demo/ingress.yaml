@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: ingress-a
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /path-a/$2
+    nginx.ingress.kubernetes.io/rewrite-target: /demo/$2
 spec:
   ingressClassName: nginx
   rules:
@@ -23,7 +23,7 @@ kind: Ingress
 metadata:
   name: ingress-b
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /path-b/$2
+    nginx.ingress.kubernetes.io/rewrite-target: /demo2/$2
 spec:
   ingressClassName: nginx
   rules:
