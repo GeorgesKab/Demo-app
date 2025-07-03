@@ -4,6 +4,7 @@ metadata:
   name: ingress-a
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /demo/$2
+    argocd.argoproj.io/ignore-healthcheck: "true"
 spec:
   ingressClassName: nginx
   rules:
@@ -24,6 +25,7 @@ metadata:
   name: ingress-b
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /demo2/$2
+    argocd.argoproj.io/ignore-healthcheck: "true"
 spec:
   ingressClassName: nginx
   rules:
